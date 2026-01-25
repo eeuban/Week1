@@ -61,7 +61,6 @@ namespace{
     TEST(Complex, conjugate){
         // Vars
         const complex a = {10.0, 5.0};
-        const complex b = {22.0, 4.0};
         
         const complex actual = conjugate(a);
         EXPECT_DOUBLE_EQ(actual.real, a.real);
@@ -71,7 +70,6 @@ namespace{
     TEST(Complex, 2polar){
         // Vars
         const complex a = {10.0, 5.0};
-        const complex b = {22.0, 4.0};
         
         const polar actual = to_polar(a);
         EXPECT_DOUBLE_EQ(actual.r, 5*sqrt(5));
@@ -81,11 +79,70 @@ namespace{
     TEST(Complex, power){
         // Vars
         const complex a = {10.0, 5.0};
-        const complex b = {22.0, 4.0};
         
         const complex actual = power(a, 2);
         EXPECT_DOUBLE_EQ(actual.real, 100.0);
         EXPECT_DOUBLE_EQ(actual.im, 25.0);
     };
 
+    TEST(Complex, magnitude){
+        // Vars
+        const complex a = {10.0, 5.0};
+        
+        double actual = magnitude(a);
+        EXPECT_DOUBLE_EQ(actual, 5*sqrt(5));
+    };
+
+    TEST(Complex, equals){
+        // Vars
+        const complex a = {10.0, 5.0};
+        const complex b = {10.0, 5.0};
+        const complex c = {11.0, 5.0};
+        const complex d = {10.0, 6.0};
+        const complex e = {15.3, 13.2};
+        
+        EXPECT_DOUBLE_EQ(1, equals(a, b));
+        EXPECT_DOUBLE_EQ(0, equals(a, c));
+        EXPECT_DOUBLE_EQ(0, equals(a, d));
+        EXPECT_DOUBLE_EQ(0, equals(a, e));
+    };
+
+    TEST(Complex, is_real){
+        // Vars
+        const complex a = {10.0, 5.0};
+        const complex b = {10.0, 0};
+        const complex c = {0, 0};
+        const complex d = {0, 5.0};
+        
+        EXPECT_DOUBLE_EQ(0, is_real(a));
+        EXPECT_DOUBLE_EQ(1, is_real(b));
+        EXPECT_DOUBLE_EQ(1, is_real(c));
+        EXPECT_DOUBLE_EQ(0, is_real(d));
+    };
+
+    TEST(Complex, is_imaginary){
+        // Vars
+        const complex a = {10.0, 5.0};
+        const complex b = {10.0, 0};
+        const complex c = {0, 0};
+        const complex d = {0, 5.0};
+        
+        EXPECT_DOUBLE_EQ(0, is_imaginary(a));
+        EXPECT_DOUBLE_EQ(0, is_imaginary(b));
+        EXPECT_DOUBLE_EQ(1, is_imaginary(c));
+        EXPECT_DOUBLE_EQ(1, is_imaginary(d));
+    };
+
+    TEST(Complex, is_zero){
+        // Vars
+        const complex a = {10.0, 5.0};
+        const complex b = {10.0, 0};
+        const complex c = {0, 0};
+        const complex d = {0, 5.0};
+        
+        EXPECT_DOUBLE_EQ(0, is_zero(a));
+        EXPECT_DOUBLE_EQ(0, is_zero(b));
+        EXPECT_DOUBLE_EQ(1, is_zero(c));
+        EXPECT_DOUBLE_EQ(0, is_zero(d));
+    };
 }

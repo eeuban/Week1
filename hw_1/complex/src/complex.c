@@ -73,14 +73,44 @@ complex power(complex a, int b){
     complex c = {realpwr, imgpwr};
     return c;
 };
-// Magnitude for complex and polar number
-double magnitude_complex( complex);
-double magnitude_polar( polar);
+
+// Magnitude for complex number. A double is returned.
+double magnitude(complex a){
+    return sqrt(pow(a.real, 2) + pow(a.im, 2));
+};
 
 // Comparisons
-int equals( complex,  complex);
-int is_real( complex,  complex);
-int is_imaginary( complex);
-int is_zero( complex);
+// Determines if complex number a is equal to b. Returns 1 for true and 0 for false.
+int equals(complex a, complex b){
+    if((a.real == b.real)&&(a.im == b.im)){
+        return 1;
+    }
+    return 0;
+}
+
+// If imaginary part is 0, the number is real. Return 1 if real, 0 if not.
+int is_real(complex a){
+    if(a.im == 0.0){
+        return 1;
+    }
+    return 0;
+}
+
+// Checks if number is imaginary. If real part is zero. Return 1 if imaginary, 0 if not.
+int is_imaginary(complex a){
+    if(a.real == 0.0){
+        return 1;
+    }
+    return 0;
+};
+
+// Check if both parts are zero. If both real and imaginary parts are zero, return 1. If
+// any one is not zero return 0.
+int is_zero(complex a){
+    if((a.real == 0.0)&&(a.im == 0.0)){
+        return 1;
+    }
+    return 0;
+};
 
 
