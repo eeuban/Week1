@@ -1,2 +1,11 @@
 **/test
 ./week1/build/
+bin/
+build/
+html/
+latex/
+tmp/
+~*
+_.o
+_.a
+**.DS_Store

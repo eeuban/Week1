@@ -7,3 +7,4 @@ tmp/
 _.o
 _.a
 **.DS_Store
+googletest
