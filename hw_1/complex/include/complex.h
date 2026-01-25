@@ -3,33 +3,32 @@
 
 #include <stdio.h>
 
-struct complex{
+typedef struct {
     double real;
     double im;
-};
+} complex;
 
-struct polar{
+typedef struct {
     double r;
     double theta;
-};
+} polar;
 
 // Basic Operators
-struct complex add(struct complex a, struct complex b);
-// struct complex subtract(struct complex, struct complex);
-// struct complex negate(struct complex);
-// struct complex multiply(struct complex, struct complex);
-// struct complex divide(struct complex, struct complex);
-// struct complex conjugate(struct complex, struct complex);
-// struct polar to_polar(struct complex, struct complex);
-// struct complex power(struct complex, struct complex);
-// // Magnitude for complex and polar number
-// double magnitude_complex(struct complex);
-// double magnitude_polar(struct polar);
+ complex add( complex a, complex b);
+ complex subtract( complex a, complex b);
+ complex negate( complex a);
+ complex multiply( complex a, complex b);
+ complex divide( complex a, complex b);
+ complex conjugate( complex a);
+ polar to_polar( complex a);
+ complex power( complex a, int b);
+// Magnitude for complex and polar number
+double magnitude_polar( polar a);
 
-// // Comparisons
-// int equals(struct complex, struct complex);
-// int is_real(struct complex, struct complex);
-// int is_imaginary(struct complex);
-// int is_zero(struct complex);
+// Comparisons
+int equals( complex a, complex b);
+int is_real( complex a, complex b);
+int is_imaginary( complex a);
+int is_zero( complex a);
 
 #endif
