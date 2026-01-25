@@ -1,3 +1,5 @@
+/* Used chatGPT model 3 to understand how floating point IEEE 754 standard handles highmagnitudes subtracted by smaller ones.*/
+
 #include <stdio.h>
 #include <math.h>
 #include "complex.h"
@@ -5,8 +7,19 @@
 // Adds two complex numbers together. Returns a complex number.
  complex add(complex a, complex b){
     complex c;
+
+    // If real or im part is greater than maximum double subtracted by second complex number
+    // Then return -1.0. With negatives Vice Versa.
+    if((a.real > __DBL_MAX__ - b.real)||(c.im > __DBL_MAX__ - b.im)||
+       (a.real < nextafter(-INFINITY,b.real))||(a.im < nextafter(-INFINITY,b.im))){
+
+        c.real = -1.0;
+        c.im = -1.0;
+        return c;
+    }
     c.real = a.real + b.real;
     c.im = a.im + b.im;
+
     return c;
 };
 
