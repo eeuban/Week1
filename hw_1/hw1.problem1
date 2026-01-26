@@ -1,0 +1,118 @@
+Script started on Sun Jan 25 22:05:42 2026
+Restored session: Sun Jan 25 22:02:01 PST 2026
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/Desktop/Winter_2026/EEP%20520%20Software%20Engineering%20for%20Embedded%20Applications/Homework/520win26/hw_1[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro hw_1 % [K[?2004heecho h Hello and welcome to he  the new quarter[?2004l
+Hello and welcome to the new quarter
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/Desktop/Winter_2026/EEP%20520%20Software%20Engineering%20for%20Embedded%20Applications/Homework/520win26/hw_1[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro hw_1 % [K[?2004hddate[?2004l
+Sun Jan 25 22:06:06 PST 2026
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/Desktop/Winter_2026/EEP%20520%20Software%20Engineering%20for%20Embedded%20Applications/Homework/520win26/hw_1[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro hw_1 % [K[?2004hppwd[?2004l
+/Users/eyaneubanks/Desktop/Winter_2026/EEP 520 Software Engineering for Embedded Applications/Homework/520win26/hw_1
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/Desktop/Winter_2026/EEP%20520%20Software%20Engineering%20for%20Embedded%20Applications/Homework/520win26/hw_1[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro hw_1 % [K[?2004hccd ~[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hppwd[?2004l
+/Users/eyaneubanks
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls -l[?2004l
+total 40
+drwxr-xr-x    3 eyaneubanks  staff     96 Jan  8  2025 anaconda_projects
+drw-rwxrw-@   4 eyaneubanks  staff    128 Sep 14  2024 Applications
+drwx------@  24 eyaneubanks  staff    768 Jan  9 07:54 Desktop
+drwx------+   6 eyaneubanks  staff    192 Nov  3 08:44 Documents
+drwx------+  20 eyaneubanks  staff    640 Jan 15 19:39 Downloads
+drwx------+ 108 eyaneubanks  staff   3456 Nov  3 08:55 Library
+-rw-r--r--@   1 eyaneubanks  staff   5165 Dec  1 16:52 matlab_crash_dump.1556-1
+-rw-r--r--@   1 eyaneubanks  staff   5166 Nov 25 20:45 matlab_crash_dump.54383-1
+drwx------    6 eyaneubanks  staff    192 Jan  7 17:42 Movies
+drwx------+   5 eyaneubanks  staff    160 Jan  7 17:42 Music
+drwxr-xr-x@   3 eyaneubanks  staff     96 Jan 15  2025 nltk_data
+drwxr-xr-x  340 eyaneubanks  staff  10880 Jan  7 17:42 node_modules
+drwx------+  11 eyaneubanks  staff    352 Feb  9  2025 Pictures
+drwxr-xr-x@   3 eyaneubanks  staff     96 Jun  3  2023 Postman
+drwxr-xr-x+   4 eyaneubanks  staff    128 Jun  3  2023 Public
+-r--r--r--    1 eyaneubanks  staff     13 Jan 12 18:05 secretefile.txt
+drwxr-xr-x    2 eyaneubanks  staff     64 Jan 25 22:00 temp_new
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hccd c  mmkdir temp[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hmmv temp temp_new[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls temp_new[?2004l
+temp
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls -l[?2004l
+total 40
+drwxr-xr-x    3 eyaneubanks  staff     96 Jan  8  2025 anaconda_projects
+drw-rwxrw-@   4 eyaneubanks  staff    128 Sep 14  2024 Applications
+drwx------@  24 eyaneubanks  staff    768 Jan  9 07:54 Desktop
+drwx------+   6 eyaneubanks  staff    192 Nov  3 08:44 Documents
+drwx------+  20 eyaneubanks  staff    640 Jan 15 19:39 Downloads
+drwx------+ 108 eyaneubanks  staff   3456 Nov  3 08:55 Library
+-rw-r--r--@   1 eyaneubanks  staff   5165 Dec  1 16:52 matlab_crash_dump.1556-1
+-rw-r--r--@   1 eyaneubanks  staff   5166 Nov 25 20:45 matlab_crash_dump.54383-1
+drwx------    6 eyaneubanks  staff    192 Jan  7 17:42 Movies
+drwx------+   5 eyaneubanks  staff    160 Jan  7 17:42 Music
+drwxr-xr-x@   3 eyaneubanks  staff     96 Jan 15  2025 nltk_data
+drwxr-xr-x  340 eyaneubanks  staff  10880 Jan  7 17:42 node_modules
+drwx------+  11 eyaneubanks  staff    352 Feb  9  2025 Pictures
+drwxr-xr-x@   3 eyaneubanks  staff     96 Jun  3  2023 Postman
+drwxr-xr-x+   4 eyaneubanks  staff    128 Jun  3  2023 Public
+-r--r--r--    1 eyaneubanks  staff     13 Jan 12 18:05 secretefile.txt
+drwxr-xr-x    3 eyaneubanks  staff     96 Jan 25 22:06 temp_new
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hccd temp_new[1m/[0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/temp_new[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro temp_new % [K[?2004hlls[?2004l
+temp
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/temp_new[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro temp_new % [K[?2004hm ttouch five5    ile5[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/temp_new[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro temp_new % [K[?2004hmmv file5 test[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/temp_new[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro temp_new % [K[?2004hlls[?2004l
+temp	test
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/temp_new[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro temp_new % [K[?2004hlls -l[?2004l
+total 0
+drwxr-xr-x  2 eyaneubanks  staff  64 Jan 25 22:06 temp
+-rw-r--r--  1 eyaneubanks  staff   0 Jan 25 22:07 test
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks/temp_new[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro temp_new % [K[?2004hccd ..[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls[?2004l
+anaconda_projects		Downloads			Movies				Pictures			temp_new
+Applications			Library				Music				Postman
+Desktop				matlab_crash_dump.1556-1	nltk_data			Public
+Documents			matlab_crash_dump.54383-1	node_modules			secretefile.txt
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hrrm -rf temp_new[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls[?2004l
+anaconda_projects		Downloads			Movies				Pictures
+Applications			Library				Music				Postman
+Desktop				matlab_crash_dump.1556-1	nltk_data			Public
+Documents			matlab_crash_dump.54383-1	node_modules			secretefile.txt
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hrrm secretefile.txt[1m [0m[0m [?2004l
+override r--r--r-- eyaneubanks/staff for secretefile.txt? y
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls[?2004l
+anaconda_projects		Documents			matlab_crash_dump.1556-1	Music				Pictures
+Applications			Downloads			matlab_crash_dump.54383-1	nltk_data			Postman
+Desktop				Library				Movies				node_modules			Public
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004httouh ch secretefile ||  > Its 's a secrete !                           t  eecho its a secrete  ! > se  touch     secrete file[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls[?2004l
+anaconda_projects		Downloads			Movies				Pictures
+Applications			Library				Music				Postman
+Desktop				matlab_crash_dump.1556-1	nltk_data			Public
+Documents			matlab_crash_dump.54383-1	node_modules			secretfile
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hcchmod -w secretfile[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls -l[?2004l
+total 40
+drwxr-xr-x    3 eyaneubanks  staff     96 Jan  8  2025 anaconda_projects
+drw-rwxrw-@   4 eyaneubanks  staff    128 Sep 14  2024 Applications
+drwx------@  24 eyaneubanks  staff    768 Jan  9 07:54 Desktop
+drwx------+   6 eyaneubanks  staff    192 Nov  3 08:44 Documents
+drwx------+  20 eyaneubanks  staff    640 Jan 15 19:39 Downloads
+drwx------+ 108 eyaneubanks  staff   3456 Nov  3 08:55 Library
+-rw-r--r--@   1 eyaneubanks  staff   5165 Dec  1 16:52 matlab_crash_dump.1556-1
+-rw-r--r--@   1 eyaneubanks  staff   5166 Nov 25 20:45 matlab_crash_dump.54383-1
+drwx------    6 eyaneubanks  staff    192 Jan  7 17:42 Movies
+drwx------+   5 eyaneubanks  staff    160 Jan  7 17:42 Music
+drwxr-xr-x@   3 eyaneubanks  staff     96 Jan 15  2025 nltk_data
+drwxr-xr-x  340 eyaneubanks  staff  10880 Jan  7 17:42 node_modules
+drwx------+  11 eyaneubanks  staff    352 Feb  9  2025 Pictures
+drwxr-xr-x@   3 eyaneubanks  staff     96 Jun  3  2023 Postman
+drwxr-xr-x+   4 eyaneubanks  staff    128 Jun  3  2023 Public
+-r--r--r--    1 eyaneubanks  staff     14 Jan 25 22:10 secretfile
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hlls -l secretfile[1m [0m[0m [?2004l
+-r--r--r--  1 eyaneubanks  staff  14 Jan 25 22:10 secretfile
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004hccat Try adding new text > secretfile[?2004l
+zsh: permission denied: secretfile
+[1m[7m%[27m[1m[0m                                                                                                                                                                           ]7;file://Eyans-MacBook-Pro.local/Users/eyaneubanks[0m[27m[24m[J(base) eyaneubanks@Eyans-MacBook-Pro ~ % [K[?2004heexit[?2004l
+
+Saving session...
+...saving history...truncating history files...
+...completed.
+
+Script done on Sun Jan 25 22:12:04 2026
