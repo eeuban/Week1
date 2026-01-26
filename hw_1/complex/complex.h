@@ -32,6 +32,6 @@ int is_zero(complex a);
 
 // Auxilliary
 int Is_Infinite(complex a);
-int willOverflow(complex a);
+int willOverflow(double a, double b);
 
 #endif
