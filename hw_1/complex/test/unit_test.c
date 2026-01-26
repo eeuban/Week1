@@ -16,6 +16,8 @@ namespace{
 
         const complex actual = add(a, b);
         const complex actual1 = add(a, c);
+
+        // Testing is_infinite functionality.
         const complex actual2 = add(a, d);
         const complex actual3 = add(e, f);
         const complex actual4 = add(g, c);
@@ -27,10 +29,10 @@ namespace{
         EXPECT_DOUBLE_EQ(actual2.real, -1.0);
         EXPECT_DOUBLE_EQ(actual2.im, -1.0);
         // Should be equal to INFINITY-1 == INFINITY due to IEEE 754 standard. 
-        EXPECT_DOUBLE_EQ(actual3.real, -1);
-        EXPECT_DOUBLE_EQ(actual3.im, -1);
-        EXPECT_DOUBLE_EQ(actual4.real, -1);
-        EXPECT_DOUBLE_EQ(actual4.im, -1);
+        EXPECT_DOUBLE_EQ(actual3.real, -1.0);
+        EXPECT_DOUBLE_EQ(actual3.im, -1.0);
+        EXPECT_DOUBLE_EQ(actual4.real, -1.0);
+        EXPECT_DOUBLE_EQ(actual4.im, -1.0);
     };
 
     TEST(Complex, subtract){
@@ -39,13 +41,32 @@ namespace{
         const complex b = {22.0, 4.0};
         const complex c = {-13.2, -15.4};
 
+        const complex d = {INFINITY, -3.2};
+        const complex e = {8.0, INFINITY};
+        const complex f = {-INFINITY, -3.2};
+        const complex g = {INFINITY-2.0, 3.2};
+
         const complex actual = subtract(a, b);
         const complex actual1 = subtract(a, c);
+
+        const complex actual2 = subtract(c, d);
+        const complex actual3 = subtract(e, b);
+
+        const complex actual4 = subtract(f, a);
+        const complex actual5 = subtract(g, a);
 
         EXPECT_DOUBLE_EQ(actual.real, -12.0);
         EXPECT_DOUBLE_EQ(actual.im, 1);
         EXPECT_DOUBLE_EQ(actual1.real, 23.2);
         EXPECT_DOUBLE_EQ(actual1.im, 20.4);
+        EXPECT_DOUBLE_EQ(actual2.real, -1);
+        EXPECT_DOUBLE_EQ(actual2.im, -1);
+        EXPECT_DOUBLE_EQ(actual3.real, -1);
+        EXPECT_DOUBLE_EQ(actual3.im, -1);
+        EXPECT_DOUBLE_EQ(actual4.real, -1);
+        EXPECT_DOUBLE_EQ(actual4.im, -1);
+        EXPECT_DOUBLE_EQ(actual5.real, -1);
+        EXPECT_DOUBLE_EQ(actual5.im, -1);
     };
 
     TEST(Complex, multiply){
@@ -117,17 +138,31 @@ namespace{
         const polar actual1 = to_polar(b);
         EXPECT_DOUBLE_EQ(actual.r, 5*sqrt(5));
         EXPECT_DOUBLE_EQ(actual.theta, atan2(5.0, 10.0));
-        EXPECT_DOUBLE_EQ(actual1.r, sqrt((18760/100) * pow(-36093,2)));
+        EXPECT_DOUBLE_EQ(actual1.r, sqrt((18769.0/100.0) + pow(-36093.0,2)));
         EXPECT_DOUBLE_EQ(actual1.theta, atan2(-36093, 13.7));
     };
 
     TEST(Complex, power){
         // Vars
         const complex a = {10.0, 5.0};
+
         
         const complex actual = power(a, 2);
+        const complex actual1 = power(a, 15);
+        const complex actual2 = power(a, -1);
+        const complex actual3 = power(a, -5);
+        const complex actual4 = power(a, 100000);
+
         EXPECT_DOUBLE_EQ(actual.real, 100.0);
         EXPECT_DOUBLE_EQ(actual.im, 25.0);
+        EXPECT_DOUBLE_EQ(actual1.real, 1000000000000000.0);
+        EXPECT_DOUBLE_EQ(actual1.im, 30517578125.0);
+        EXPECT_DOUBLE_EQ(actual2.real, 1.0/10.0);
+        EXPECT_DOUBLE_EQ(actual2.im, 1.0/5.0);
+        EXPECT_DOUBLE_EQ(actual3.real, 1.0/100000.0);
+        EXPECT_DOUBLE_EQ(actual3.im, 1.0/3125.0);
+        EXPECT_DOUBLE_EQ(actual4.real, -1.0);
+        EXPECT_DOUBLE_EQ(actual4.im, -1.0);
     };
 
     TEST(Complex, magnitude){

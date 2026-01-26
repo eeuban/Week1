@@ -30,4 +30,8 @@ int is_real(complex a);
 int is_imaginary(complex a);
 int is_zero(complex a);
 
+// Auxilliary
+int Is_Infinite(complex a);
+int willOverflow(complex a);
+
 #endif
