@@ -75,10 +75,14 @@ namespace{
         const complex b = {22.0, 4.0};
         const complex c = {-13.2, -15.4};
         const complex d = {0.0, -1.0};
+        const complex e = {100000000000.0, 100000000000.0};
+        const complex f = {INFINITY, 1000000000000000000000000000.0};
 
         const complex actual = multiply(a, b);
         const complex actual1 = multiply(a, c);
         const complex actual2 = multiply(c, d);
+        const complex actual3 = multiply(e, b);
+        const complex actual4 = multiply(e, f);
 
         EXPECT_DOUBLE_EQ(actual.real, 220.0);
         EXPECT_DOUBLE_EQ(actual.im, 20.0);
@@ -86,6 +90,10 @@ namespace{
         EXPECT_DOUBLE_EQ(actual1.im, -77);
         EXPECT_DOUBLE_EQ(actual2.real, 0.0);
         EXPECT_DOUBLE_EQ(actual2.im, 15.4);
+        EXPECT_DOUBLE_EQ(actual3.real, 2200000000000.0);
+        EXPECT_DOUBLE_EQ(actual3.im, 400000000000.0);
+        EXPECT_DOUBLE_EQ(actual4.real, -1);
+        EXPECT_DOUBLE_EQ(actual4.im, -1);
     };
 
     TEST(Complex, divide){
@@ -95,11 +103,14 @@ namespace{
         const complex azero = {0., 5.0};
         const complex bzero = {.6, 0.};
         const complex d = {3.23, 58973};
+        const complex e = {INFINITY, 3.09732894};
+        const complex f = {0.0000000000004, 7.23098472};
 
         const complex actual = divide(a, b);
         const complex actual1 = divide(azero, b);
         const complex actual2 = divide(a, bzero);
         const complex actual3 = divide(b, d);
+        const complex actual4 = divide(e, f);
 
         EXPECT_DOUBLE_EQ(actual.real, 10.0/22.0);
         EXPECT_DOUBLE_EQ(actual.im, 1.25);
@@ -109,6 +120,8 @@ namespace{
         EXPECT_DOUBLE_EQ(actual2.im, INFINITY);
         EXPECT_DOUBLE_EQ(actual3.real, 22.0/3.23);
         EXPECT_DOUBLE_EQ(actual3.im, 4.0/58973);
+        EXPECT_DOUBLE_EQ(actual4.real, -1);
+        EXPECT_DOUBLE_EQ(actual4.im, -1);
     };
 
     TEST(Complex, conjugate){
@@ -168,9 +181,12 @@ namespace{
     TEST(Complex, magnitude){
         // Vars
         const complex a = {10.0, 5.0};
+        const complex b = {678345e300, 530485e300};
         
         double actual = magnitude(a);
+        double actual1 = magnitude(b);
         EXPECT_DOUBLE_EQ(actual, 5*sqrt(5));
+        EXPECT_DOUBLE_EQ(actual1, -1.0);
     };
 
     TEST(Complex, equals){

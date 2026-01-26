@@ -6,6 +6,7 @@ high magnitude Arithmetic.*/
 #include "complex.h"
 #include <float.h>
 
+// Test if a complex number is infinite. Returns 1 if infinite and 0 if not.
 int is_infinite(complex a){
     if((a.real == INFINITY)||(a.im == INFINITY)||(a.real == -INFINITY)||(a.im == -INFINITY))
        return 1;
@@ -14,13 +15,16 @@ int is_infinite(complex a){
 };
 
 // Checks if Overflow will occur before multiply operation. If a * b > DBL_MAX then operation will overflow.
-// We check if the a is a number greater than quotient DBL_MAX / b.
+// We check if the a is a number greater than quotient DBL_MAX / b. Returns 1 if the operation will overflow
+// and 0 if not.
 int willOverflow(double a, double b){
-    if(a > 0 && b > 0 && a > 0 && b > 0 && a > DBL_MAX / b) return 1;
-    if(a > 0 && b > 0 && a > 0 && b > 0 && b > DBL_MAX / a) return 1;
+    if(a > 0 && b > 0 && a > DBL_MAX / b) return 1;
+    if(a > 0 && b > 0 && b > DBL_MAX / a) return 1;
     return 0;
 };
-// Adds two complex numbers together. Returns a complex number.
+
+// Adds two complex numbers together. Returns a complex number. The real and imaginary parts will be -1.0 if 
+// The sum aproaches Infinity.
  complex add(complex a, complex b){
     complex c;
     // If real or im part is INFINIFY Then return -1.0. With negatives Vice Versa.
@@ -35,7 +39,8 @@ int willOverflow(double a, double b){
     return c;
 };
 
-// Adds subtracts complex numbers together. Returns a complex number.
+// Adds subtracts complex numbers together. Returns a complex number. The real and imaginary parts will be
+// -1.0 if the values include numbers close to infinity.
  complex subtract(complex a,  complex b){
     complex c;
     if(is_infinite(a)||is_infinite(b)){
@@ -48,7 +53,8 @@ int willOverflow(double a, double b){
     return c;
 };
 
-// Makes a complex number negaitve.
+// Makes a complex number negaitve.  The real and imaginary parts will be -1.0 if the values include numbers 
+// close to infinity.
  complex negate(complex a){
     complex c;
     if(is_infinite(a)){
@@ -61,7 +67,9 @@ int willOverflow(double a, double b){
     return c;
 };
 
-// Multiply complex number a by complex number b. A complex number is returned. 
+// Multiply complex number a by complex number b. A complex number is returned. The real and imaginary parts will be
+// -1.0 if the values include numbers close to infinity. -1.0 for each part will also be returned if product is 
+// determined to overflow.
 complex multiply(complex a, complex b){
     complex c;
     if(is_infinite(a)||is_infinite(b)){
@@ -81,8 +89,9 @@ complex multiply(complex a, complex b){
     return c;
 };
 
-// Divides complex number a by complex number b. If b is zero, Infinity is returned for both
-// real and imaginary parts. A complex number is returned. 
+// Divides complex number a by complex number b. If b is zero, Infinity is returned for both real and imaginary 
+// parts. A complex number is returned. The real and imaginary parts will be -1.0 if the values include numbers 
+// close to infinity. -1.0 for each part will also be returned if product is determined to overflow.
 complex divide(complex a, complex b){
     complex c;
     if(is_infinite(a)||is_infinite(b)){
@@ -109,7 +118,8 @@ complex divide(complex a, complex b){
     return c;
 };
 
-// Returns conjugate of complex number. Multiply imaginary number by -1 to negate the number.
+// Returns conjugate of complex number. Multiply imaginary number by -1 to negate the number. The real and imaginary parts will be
+// -1.0 if the values include numbers close to infinity.
 complex conjugate(complex a){
     complex c;
     if(is_infinite(a)){
@@ -121,21 +131,39 @@ complex conjugate(complex a){
     return c;
 };
 
-// Converts complex number to polar number. Compute magnitude and angle of complex number
-// using euclidean distance and arctan respectively. A Polar number is returned.
+// Converts complex number to polar number. Compute magnitude and angle of complex number using euclidean distance 
+// and arctan respectively. A Polar number is returned. The magnitude will be -1.0 and theta will be if -7.0 the values
+// include numbers close to infinity. -1.0 and -7.0 will also be used to determine overflow. Maximum and minimum values
+// for theta include -6.283 radians to 6.283 radians (2pi).
 polar to_polar(complex a){
     polar c;
     if(is_infinite(a)){
         c.r = -1.0;
-        c.theta = -1.0;
+        c.theta = -7.0;
         return c;
     }
+
+    // Prevent power for overflowing
+    if(willOverflow(a.real, a.real)||willOverflow(a.im, a.im)){
+        c.r = -1.0;
+        c.theta = -7.0;
+        return c;
+    }
+
     double r = sqrt(pow(a.real, 2) + pow(a.im, 2));
     double theta = atan2(a.im, a.real);
+
+    // If theta is greater than circumfrance of a circle, return as undefined behavior.
+    if (theta > 2 * M_PI || theta < 2 * M_PI){
+        c.r = -1.0;
+        c.theta = -7.0;
+    }
     c = {r, theta};
     return c;
 };
 
+// Takes complex number a to the power of b. Returns a complex number. The real and imaginary parts will be -1.0 if the values include numbers 
+// close to infinity. -1.0 for each part will also be returned if product is determined to overflow.
 complex power(complex a, int b){
     complex c;
     if(is_infinite(a)){
@@ -164,7 +192,8 @@ complex power(complex a, int b){
     return c;
 };
 
-// Magnitude for complex number. A double is returned.
+// Magnitude for complex number. A double is returned. -1.0 will be returned if the values include numbers 
+// close to infinity. -1.0 will also be returned if possible overflow.
 double magnitude(complex a){
     complex c;
     if(is_infinite(a))
@@ -181,7 +210,8 @@ double magnitude(complex a){
 // We also check Infinities with comparision operators. When comparing infinities C determines math weirdly.
 // Ex. INFINITY - 1 == INFINITY. While not equal they are determined equal in C. Will check for Infinity prior.
 
-// Determines if complex number a is equal to b. Returns 1 for true and 0 for false.
+// Determines if complex number a is equal to b. Returns 1 for true and 0 for false. -1.0 will also be returned 
+// if Infinite values are used.
 int equals(complex a, complex b){
     complex c;
     if(is_infinite(a)||is_infinite(b))
@@ -193,7 +223,8 @@ int equals(complex a, complex b){
     return 0;
 }
 
-// If imaginary part is 0, the number is real. Return 1 if real, 0 if not.
+// If imaginary part is 0, the number is real. Return 1 if real, 0 if not. -1.0 will also be returned 
+// if Infinite values are used.
 int is_real(complex a){
     complex c;
     if(is_infinite(a))
@@ -205,7 +236,8 @@ int is_real(complex a){
     return 0;
 }
 
-// Checks if number is imaginary. If real part is zero. Return 1 if imaginary, 0 if not.
+// Checks if number is imaginary. If real part is zero. Return 1 if imaginary, 0 if not. -1.0 will also be returned 
+// if Infinite values are used.
 int is_imaginary(complex a){
     complex c;
     if(is_infinite(a))
@@ -217,8 +249,8 @@ int is_imaginary(complex a){
     return 0;
 };
 
-// Check if both parts are zero. If both real and imaginary parts are zero, return 1. If
-// any one is not zero return 0.
+// Check if both parts are zero. If both real and imaginary parts are zero, return 1. If any one is not zero return 0.
+// -1.0 will also be returned if infinite values are used.
 int is_zero(complex a){
     complex c;
     if(is_infinite(a))
@@ -229,5 +261,3 @@ int is_zero(complex a){
     }
     return 0;
 };
-
-
