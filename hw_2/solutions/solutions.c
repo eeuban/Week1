@@ -3,6 +3,11 @@
 #include "solutions.h"
 #include <string.h>
 
+/**
+ * @addtogroup arrayOperations
+ * @{
+ */
+
 int running_total (int a){
     static int total;
     return total += a;
@@ -85,6 +90,13 @@ int * remove_duplicates(int * array, int size, int * newlen){
     }
     return unique;
 }
+
+/** @} */ // end of arrayOperations
+
+/**
+ * @addtogroup stringOperations
+ * @{
+ */
 
 char * string_reverse(char * str){
 
@@ -178,3 +190,5 @@ void free_string_array(char **result, int & count){
         free(result[i]);
     }
 }
+
+/** @} */ // end of stringOperations
