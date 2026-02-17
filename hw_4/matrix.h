@@ -4,6 +4,8 @@
 #include <iostream>
 #include <stdexcept>
 #include <assert.h>
+#include <vector>
+#include <initializer_list>
 
 class Matrix{
     public:
@@ -63,9 +65,14 @@ class Matrix{
     // Assignment Operator
     Matrix& operator=(const Matrix& other); // Copy assignment
 
+    // Matrix printer
+    void print();
+
     private:
 
-    std::vector<double> data;   // Where elements are stored row-major order
+    std::vector<double> * data;   // Where elements are stored row-major order
+    size_t num_rows;
+    size_t num_cols;
 };
 
 
