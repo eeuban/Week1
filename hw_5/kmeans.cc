@@ -188,7 +188,7 @@ double KMeans::calculateInertia(){
 
 void KMeans::saveAsImage(const std::string& filename){
     // Sets colors of .PPM pixel
-    typedef struct Pixel{
+    struct Pixel{
         int r, g, b;
     };
 

@@ -56,7 +56,6 @@ void LinearRegression::generateSyntheticData(int numPoints, double trueSlope, do
     std::uniform_real_distribution<> xDis(0, 10);
     std::normal_distribution<> noiseDis(0, noise);
 
-    std::cout << "true slope is" << trueSlope << std::endl;
     for (int i = 0; i < numPoints; i++) {
         double x = xDis(gen);
         double y = trueSlope * x + trueIntercept + noiseDis(gen);
@@ -85,7 +84,10 @@ void LinearRegression::calculateMetrics(){
     }
 
     // Calculate R^2
-    rSquared =  - sse/sst;
+    rSquared = sse/sst;
+    std::cout << "R^2: " << rSquared << std::endl;
+    std::cout << "Mean Squared Error: " << calculateMSE() << std::endl;
+    std::cout << "Mean Absolute Error: " << calculateMAE() << std::endl;
 }
 
 void LinearRegression::fit(){
@@ -145,7 +147,7 @@ double LinearRegression::calculateMAE(){
 
 void LinearRegression::saveAsImage(const std::string& filename){
     // Sets colors of .PPM pixel
-    typedef struct Pixel{
+    struct Pixel{
         int r, g, b;
     };
 
