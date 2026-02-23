@@ -1,6 +1,6 @@
 ./week1/build/*
 bin/
-build/**
+build/
 html/*
 latex/*
 tmp/*
@@ -8,3 +8,4 @@ tmp/*
 **.o
 _.a
 **.DS_Store
+*.PPM
