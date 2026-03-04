@@ -42,7 +42,6 @@ std::chrono::steady_clock::duration Stopwatch::get_duration(){
                 stop_sum += points[i] - points[i-1];
 
         }
-        std::cout << "active_sum is: " << active_sum.count() << " stop_sum is: " << stop_sum.count() << std::endl; 
         return active_sum - stop_sum;
     }
 }

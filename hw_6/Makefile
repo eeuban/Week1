@@ -14,7 +14,7 @@ SRCEXT      := cc
 
 #Flags, Libraries and Includes
 CFLAGS      := -ggdb
-LIB         := -lgtest -lpthread 
+LIB         := -lgtest -lpthread -lelma
 INC         := -I$(INCDIR)
 INCDEP      := -I$(INCDIR)
 
