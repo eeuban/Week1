@@ -1,0 +1,79 @@
+{
+
+    "name": "My Enviro Project",
+    "ip": "0.0.0.0",
+    "port": 8765,
+
+    "buttons": [],
+
+    "agents": [
+        {
+        "definition": "defs/ai_robot.json",
+        "style": { "fill": "orange", "stroke": "black" },
+        "position": {
+            "x": 50,
+            "y": 0,
+            "theta": 0
+            }
+        },
+        {
+        "definition": "defs/gun.json",
+        "style": { "fill": "red", "stroke": "black" },
+        "position": {
+            "x": -330,
+            "y": 0,
+            "theta": 0
+            }
+        },
+        {
+        "definition": "defs/bullet.json",
+        "style": { "fill": "yellow", "stroke": "black" },
+        "position": {
+            "x": -100,
+            "y": 0,
+            "theta": 0
+            }
+        }
+    ],
+
+    "statics": [
+        {
+            "style": { "fill": "gray", "stroke": "none" },
+            "shape": [
+                { "x": -350, "y": -200 },
+                { "x": -350,  "y": 200 },
+                { "x": -340,  "y": 200 },
+                { "x": -340, "y": -200 }
+            ]
+        },
+        {
+            "style": { "fill": "gray", "stroke": "none" },
+            "shape": [
+                { "x": 350, "y": -200 },
+                { "x": 350,  "y": 200 },
+                { "x": 340,  "y": 200 },
+                { "x": 340, "y": -200 }
+            ]
+        },
+        {
+            "style": { "fill": "gray", "stroke": "none" },
+            "shape": [
+                { "x": -350, "y": 200 },
+                { "x": 350,  "y": 200 },
+                { "x": 350,  "y": 190 },
+                { "x": -350, "y": 190 }
+            ]
+        },
+        {
+            "style": { "fill": "gray", "stroke": "none" },
+            "shape": [
+                { "x": -350, "y": -200 },
+                { "x": 350,  "y": -200 },
+                { "x": 350,  "y": -190 },
+                { "x": -350, "y": -190 }
+            ]
+        }
+
+    ]
+
+}

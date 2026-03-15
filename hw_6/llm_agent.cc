@@ -3,7 +3,6 @@
 #include <vector>
 #include <algorithm>
 #include <curl/curl.h>
-#include <nlohmann/json.hpp>
 
 std::string api_key = std::getenv("OPENAI_API_KEY") ?: "";
 const std::string API_URL = "https://api.openai.com/v1/chat/completions";
