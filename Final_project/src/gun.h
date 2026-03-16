@@ -23,6 +23,7 @@ class GunController : public Process, public AgentInterface {
                 delta -= step;
             } else if( k == " " && cooloff == 0){
 
+                
                 double locx = x() + (16 * cos(angle()));
                 double locy = y() + (16 * sin(angle()));
                 add_agent("bullet", locx, locy, angle(),
@@ -43,21 +44,30 @@ class GunController : public Process, public AgentInterface {
             std::cout << "delta is " << delta << std::endl;
 
         });
+        watch("reset", [&](Event& e){
+            should_reset = true;
+        });
     }
     void start() {}
     void update() {
 
+        if(should_reset){
+            bool destroyed = false;
+            remove_agent(id());
+        }
+
         track_velocity(0, delta);
 
-        std::cout << "cooloff: " << cooloff << std::endl;
         if(cooloff > 0)
             cooloff--;
-   
+
     }
     void stop() {}
 
+    bool destroyed = false;
+    bool should_reset = false;
     double delta;                   // Current angle of gun
-    const double step =  1.5;     // .628100 steps in full circle in radians
+    const double step = 1.5;        // Step of gun angular velocity
     cpVect bulletSpeed = {400, 0};  // Using cpVect to define bullet speed
     u_int cooloff;                  // Cooloff time between shots
 };

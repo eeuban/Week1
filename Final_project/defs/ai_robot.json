@@ -16,7 +16,22 @@
       "linear": 40,
       "rotational": 1000
     },
-    "sensors": [
+    "sensors": [        {
+            "type": "range",
+            "location": { "x": 0, "y": 10},
+            "direction": 1.57
+        },
+        {
+            "type": "range",
+            "location": { "x": 10, "y": 0},
+            "direction": 0
+        },
+        {
+            "type": "range",
+            "location": { "x": 0, "y": -10},
+            "direction": 4.71
+        }
+
     ],
     "mass": 1,    
     "controller": "lib/ai_robot.so"

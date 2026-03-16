@@ -3,6 +3,7 @@
 
 #include "enviro.h"
 #include <chrono>
+#include <iostream>
 
 using namespace enviro;
 
@@ -14,9 +15,25 @@ class bulletController : public Process, public AgentInterface {
     }
 
     void init() {
-            notice_collisions_with("AiRobot",[&](Event &e){
+        watch("reset", [&](Event& e){
+            should_reset = true;
+        });
+
+        notice_collisions_with("AiRobot",[&](Event &e){
+            if(!destroyed){
+                json hit = {
+                    {"hit", 1},
+                };
+
+                emit(Event("bullet_hit", hit));
+
                 remove_agent(id());
-            });
+            }
+        });
+
+        notice_collisions_with("block",[&](Event &e){
+            remove_agent(id());
+        });
 
         track_velocity(60, 0, 60, 60);
         IdealVelocity = {60, 60 * sin(angle())};   // Default starting speed.
@@ -24,8 +41,15 @@ class bulletController : public Process, public AgentInterface {
     void start() {}
 
     void update() {
+        std::cout << "HEREEE" << std::endl;
+
+        if(should_reset){
+            destroyed = true;
+            remove_agent(id());
+        }
+
         // Check if bullet needs to be destroyed.
-        if(NeedToDestroy())
+        if(NeedToDestroy() && !destroyed)
             this->remove_agent(id());
 
         json bullet_info = {
@@ -53,6 +77,8 @@ class bulletController : public Process, public AgentInterface {
         return false;
     }
 
+    bool destroyed = false;
+    bool should_reset = false;
     std::chrono::high_resolution_clock::time_point minVelocitythreshold;
     cpVect IdealVelocity;
     int counter;

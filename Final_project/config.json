@@ -24,12 +24,40 @@
             "y": 0,
             "theta": 0
             }
-        },
+        }
+
+    ],
+    "invisibles":[
+        {
+            "definition": "defs/coordinator.json",
+            "rendered": false
+        }   
+    ],
+
+    "references": [
         {
         "definition": "defs/bullet.json",
         "style": { "fill": "yellow", "stroke": "black" },
         "position": {
             "x": -100,
+            "y": 0,
+            "theta": 0
+            }
+        },
+        {
+        "definition": "defs/block.json",
+        "style": { "fill": "black", "stroke": "black" },
+        "position": {
+            "x": -50,
+            "y": 0,
+            "theta": 0
+            }
+        },
+        {
+        "definition": "defs/scoreboard.json",
+        "style": { "fill": "none", "stroke": "black" },
+        "position": {
+            "x": -50,
             "y": 0,
             "theta": 0
             }
