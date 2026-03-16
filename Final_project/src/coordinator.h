@@ -50,6 +50,9 @@ class coordinatorController : public Process, public AgentInterface {
 
         // Delete all initialized agents
         if(health <= 0){
+            exit(0)
+
+            // Bellow is attempt for level functionality
             emit(Event("reset", true));
             health = HEALTH;
 
