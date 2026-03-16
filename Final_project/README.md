@@ -85,16 +85,6 @@ To Run use the command `enviro`.
 
 Navigate to `http://127.0.0.1` or `http://localhost` to begin playing.
 
-### Requirements
-List any dependencies or tools needed:
-
-- [Language/runtime, e.g., C++17]
-- [Libraries or frameworks]
-- [Operating system requirements]
-
-Example:
-
-
 This will start the simulation and display agents interacting in the environment.
 
 ---
@@ -103,15 +93,6 @@ This will start the simulation and display agents interacting in the environment
 
 The following resources helped with development:
 
-- Documentation and tutorials from:
-  - [Library or framework documentation]
-  - [Online tutorials or guides]
+Professor Sep Makhsous helped me solve my weapon pitch issue were bullets collided with the gun agent.
 
-- Code references:
-  - [GitHub repositories]
-  - [Example projects]
-
-- Additional help from:
-  - Stack Overflow
-  - Course materials
-  - Instructor or classmates
+Chatgpt provided debuging help for segmentation fault issues.
