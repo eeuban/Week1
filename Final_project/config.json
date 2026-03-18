@@ -20,7 +20,7 @@
         "definition": "defs/gun.json",
         "style": { "fill": "red", "stroke": "black" },
         "position": {
-            "x": -330,
+            "x": -320,
             "y": 0,
             "theta": 0
             }
@@ -66,6 +66,7 @@
 
     "statics": [
         {
+            "name": "static0",
             "style": { "fill": "gray", "stroke": "none" },
             "shape": [
                 { "x": -350, "y": -200 },
@@ -75,6 +76,7 @@
             ]
         },
         {
+            "name": "static1",
             "style": { "fill": "gray", "stroke": "none" },
             "shape": [
                 { "x": 350, "y": -200 },
@@ -84,6 +86,7 @@
             ]
         },
         {
+            "name": "static2",
             "style": { "fill": "gray", "stroke": "none" },
             "shape": [
                 { "x": -350, "y": 200 },
@@ -93,6 +96,7 @@
             ]
         },
         {
+            "name": "static3",
             "style": { "fill": "gray", "stroke": "none" },
             "shape": [
                 { "x": -350, "y": -200 },

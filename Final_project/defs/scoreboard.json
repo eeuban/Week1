@@ -4,8 +4,8 @@
     "description": "Replace this string with a description",
     "shape": [
         { "x": -30, "y": 20 },
-        { "x": 60, "y": 20 },
-        { "x": 60, "y": -20 },
+        { "x": 80, "y": 20 },
+        { "x": 80, "y": -20 },
         { "x": -30, "y": -20 }
     ],
     "friction": {

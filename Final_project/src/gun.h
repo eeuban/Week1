@@ -13,6 +13,8 @@ class GunController : public Process, public AgentInterface {
     GunController() : Process(), AgentInterface(), delta{0.0}, cooloff(0) {}
 
     void init() {
+
+        ignore_collisions_with("bullet");
         
         watch("keydown", [&](Event &e){
             string k = e.value()["key"].get<std::string>();
@@ -31,7 +33,6 @@ class GunController : public Process, public AgentInterface {
                 );
                 cooloff = 6;
             }
-            std::cout << "delta is " << delta << std::endl;
         });
         watch("keyup", [&](Event &e){
             string k = e.value()["key"].get<std::string>();
@@ -41,16 +42,16 @@ class GunController : public Process, public AgentInterface {
             } else if( k == "s"){
                 delta = 0;
             }
-            std::cout << "delta is " << delta << std::endl;
-
         });
         watch("reset", [&](Event& e){
             should_reset = true;
         });
     }
+
     void start() {}
     void update() {
 
+        // Removes element if game is reset.
         if(should_reset){
             bool destroyed = false;
             remove_agent(id());
@@ -64,8 +65,8 @@ class GunController : public Process, public AgentInterface {
     }
     void stop() {}
 
-    bool destroyed = false;
-    bool should_reset = false;
+    bool destroyed = false;         // Should be destroyed 
+    bool should_reset = false;      // Should be reset
     double delta;                   // Current angle of gun
     const double step = 1.5;        // Step of gun angular velocity
     cpVect bulletSpeed = {400, 0};  // Using cpVect to define bullet speed

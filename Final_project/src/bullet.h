@@ -15,6 +15,9 @@ class bulletController : public Process, public AgentInterface {
     }
 
     void init() {
+
+        ignore_collisions_with("Gun");
+
         watch("reset", [&](Event& e){
             should_reset = true;
         });
@@ -41,7 +44,6 @@ class bulletController : public Process, public AgentInterface {
     void start() {}
 
     void update() {
-        std::cout << "HEREEE" << std::endl;
 
         if(should_reset){
             destroyed = true;
@@ -92,6 +94,5 @@ class bullet : public Agent {
     private:
     bulletController c;
 };
-
 
 #endif

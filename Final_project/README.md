@@ -1,4 +1,4 @@
-# Target Practice
+# Bot Shooter 
 
 ## Goal of the Project
 The goal of this project was to create a simple bot shooting game that exemplifies usage of the enviro game engine.
@@ -49,11 +49,6 @@ During development, several challenges were encountered:
    Multipication of 16 scales the y vector to adjust for gun and length.
 
    Explanation of the technical problem and how it affected the project.
-
-How these challenges were addressed:
-- [Solution or workaround]
-- [Tools or techniques used]
-- [Lessons learned]
 
 ---
 

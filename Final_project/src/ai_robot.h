@@ -7,40 +7,41 @@
 
 using namespace enviro;
 
-#define DODGEDISTANCE_X 150
-#define DODGEDISTANCE_Y 30
+#define DODGEDISTANCE_X 150     // Horizontal dodge distance
+#define DODGEDISTANCE_Y 30      // Vertical dodge distance
 #define ROBORESETSPEED 1200     // Speed to remove away from walls
-#define HEALTH 1
+#define HEALTH 10               // Health for Robot
+#define RANDMOVE 6              // Random move period
 
+// Stores bullet current tracked bullet info
 typedef struct {
     double x;
     double y;
     int id;
     double angle;
     cpVect speed;
-    double last_seen = 10;
+    double last_seen = 10;      // Counter when bullet was last seen
 } seen_bullet;
 
 class AiRobotController : public Process, public AgentInterface {
 
     public:
-    AiRobotController() : Process(), AgentInterface(), randmove(10), health(HEALTH) {}
+    AiRobotController() : Process(), AgentInterface(), randmove(RANDMOVE), health(HEALTH) {}
 
     void init() {
         prevent_rotation();
 
         /* NOTE - Event handlers don't run during process(Ai Update) time.
            Executed immediately. */
-        watch("bullet_info", [&](Event& e){
+        watch("bullet_info", [&](Event& e) {
             senseBullet(e.value());
         });
-        watch("bullet_hit", [&](Event& e){
-            std::cout << "health is " << health << std::endl;
+        watch("bullet_hit", [&](Event& e) {
             if(health > 0)
                 health--;
             emit(Event("health", {{"health", health}}));
         });
-        watch("reset", [&](Event& e){
+        watch("reset", [&](Event& e) {
             should_reset = true;
         });
     }
@@ -48,7 +49,7 @@ class AiRobotController : public Process, public AgentInterface {
     void update() {
 
         // If need to reset, clear bullet list and return from update
-        if(should_reset){
+        if(should_reset) {
             bool destroyed = false;
             bullets.clear();
             remove_agent(id());
@@ -56,15 +57,16 @@ class AiRobotController : public Process, public AgentInterface {
         }
 
         std::vector<int> bullets_to_remove;
-        for(int i = 0; i < bullets.size(); i++){
+        for(int i = 0; i < bullets.size(); i++) {
             bullets[i].last_seen--;
+
             // If any bullet didn't emit its status mark for removal
             if(bullets[i].last_seen <= 0)
                 bullets_to_remove.push_back((int)i);
         }
 
         // Remove bullets marked for removal
-        for(int i = 0; i < bullets_to_remove.size(); i++){
+        for(int i = 0; i < bullets_to_remove.size(); i++) {
             bullets.erase(bullets.begin() + bullets_to_remove[i]);
         }
 
@@ -86,10 +88,10 @@ class AiRobotController : public Process, public AgentInterface {
             omni_apply_force(0, ROBORESETSPEED);
 
         // Randomizes Bots movement
-        if(randmove == 0){
+        if(randmove == 0) {
             int sign = rand() % 2 == 0 ? (-1) : (1);
             omni_apply_force(sign * (rand() % 1000), sign * (rand() % 1000));
-            randmove = 5;
+            randmove = RANDMOVE;
         }
         randmove--;
 
@@ -97,8 +99,8 @@ class AiRobotController : public Process, public AgentInterface {
     void stop() {}
     cpVect dodge_dir();                     // Detemine doge direction
 
-    bool destroyed = false;
-    bool should_reset = false;
+    bool destroyed = false;                 // Should be destroyed
+    bool should_reset = false;              // Shoud be reset
     int health;                             // Health the robot has
     int randmove;                           // Tick for bot movement
     void senseBullet(json bullet_info);     // Handle Bullet Sensing

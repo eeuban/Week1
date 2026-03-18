@@ -2,7 +2,7 @@
 #define __SCOREBOARD_AGENT__H
 
 #include "enviro.h"
-#define HEALTH 1
+#define HEALTH 10
 
 using namespace enviro;
 
